@@ -1,7 +1,7 @@
 from tkinter import*
 import mysql.connector
 from functools import partial
-
+*************************  Backend  **********************************************************
 def insert(a1,a2,a3,a4,a5,a6):
 	b1=a1.get()
 	b2=a2.get()
@@ -12,8 +12,8 @@ def insert(a1,a2,a3,a4,a5,a6):
 	mydb=mysql.connector.connect(
 			host="localhost",
 			user="root",
-			passwd="La$ya123",
-			database="lydatabase"
+			passwd="Your password",
+			database="DB name"
 		)
 	mycursor= mydb.cursor()
 	mycursor.execute("CREATE TABLE IF NOT EXISTS Routine (id INT AUTO_INCREMENT PRIMARY KEY, Date VARCHAR(255), Earnings VARCHAR(255), Exercise VARCHAR(255), Study VARCHAR(255),Diet VARCHAR(255), Python VARCHAR(255))")
@@ -28,8 +28,8 @@ def view():
 	mydb=mysql.connector.connect(
 			host="localhost",
 			user="root",
-			passwd="La$ya123",
-			database="lydatabase"
+			passwd="your password",
+			database="DB name"
 		)
 	mycursor= mydb.cursor()
 	mycursor.execute("SELECT * FROM Routine")
@@ -42,8 +42,8 @@ def delete(id):
 	mydb=mysql.connector.connect(
 			host="localhost",
 			user="root",
-			passwd="La$ya123",
-			database="lydatabase"
+			passwd="Your password",
+			database="DB name"
 		)
 	mycursor= mydb.cursor()
 	sql=("DELETE FROM Routine where id=%s")
@@ -62,8 +62,8 @@ def search(a1='',a2='',a3='',a4='',a5='',a6=''):
 	mydb=mysql.connector.connect(
 			host="localhost",
 			user="root",
-			passwd="La$ya123",
-			database="lydatabase"
+			passwd="Your password",
+			database="DB name"
 		)
 	mycursor= mydb.cursor()
 	sql=("SELECT * FROM Routine where Date=%s or Earnings=%s or Exercise=%s or Study=%s or Diet=%s or Python=%s")
@@ -101,6 +101,7 @@ def get_selected_row(event):
 def delete_command():
 	delete(selected_row[0])
 	return
+*****************************   Frontend  ********************************************************
 
 win=Tk()
 win.title("MY ROUTINE DATABASE SYSTEM")
