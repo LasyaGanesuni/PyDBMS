@@ -1,7 +1,7 @@
 from tkinter import*
 import mysql.connector
 from functools import partial
-*************************  Backend  **********************************************************
+# *************************  Backend  **********************************************************
 def insert(a1,a2,a3,a4,a5,a6):
 	b1=a1.get()
 	b2=a2.get()
@@ -101,7 +101,7 @@ def get_selected_row(event):
 def delete_command():
 	delete(selected_row[0])
 	return
-*****************************   Frontend  ********************************************************
+# *****************************   Frontend  ********************************************************
 
 win=Tk()
 win.title("MY ROUTINE DATABASE SYSTEM")
